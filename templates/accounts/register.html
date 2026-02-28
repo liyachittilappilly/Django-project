@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 350px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+
+        <form method="post">
+    {% csrf_token %}
+
+    <label>Full Name</label>
+    {{ form.full_name }}
+
+    <label>Username</label>
+    {{ form.username }}
+
+    <label>Email</label>
+    {{ form.email }}
+
+    <label>Phone Number</label>
+    {{ form.phone }}
+
+    <label>College</label>
+    {{ form.college }}
+
+    <label>Degree</label>
+    {{ form.degree }}
+
+    <label>Branch</label>
+    {{ form.branch }}
+
+    <label>Password</label>
+    {{ form.password }}
+
+    <label>Confirm Password</label>
+    {{ form.confirm_password }}
+
+    <button type="submit">Register</button>
+</form>
+
+    </div>
+</body>
+</html>
